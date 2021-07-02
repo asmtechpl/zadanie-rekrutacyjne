@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class Geo
@@ -12,4 +13,12 @@ use Illuminate\Database\Eloquent\Model;
 class Geo extends Model
 {
     use HasFactory;
+
+    /**
+     * @return BelongsTo
+     */
+    public function address(): BelongsTo
+    {
+        return $this->belongsTo(Address::class, 'addressId');
+    }
 }
