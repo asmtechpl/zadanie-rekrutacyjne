@@ -5,9 +5,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Class CreateGeosTable
+ * Class CreatePostsTable
  */
-class CreateGeosTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,16 +16,16 @@ class CreateGeosTable extends Migration
      */
     public function up()
     {
-        Schema::create('geos', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('lat');
-            $table->string('lng');
-            $table->unsignedBigInteger('addressId');
+            $table->unsignedBigInteger('userId');
+            $table->string('title');
+            $table->text('body');
             $table->timestamps();
 
-            $table->foreign('addressId')
+            $table->foreign('userId')
                 ->references('id')
-                ->on('addresses')
+                ->on('users')
                 ->restrictOnDelete();
         });
     }
@@ -37,6 +37,6 @@ class CreateGeosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('geos');
+        Schema::dropIfExists('posts');
     }
 }

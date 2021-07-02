@@ -5,9 +5,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Class CreateGeosTable
+ * Class AddAddressIdToUsersTable
  */
-class CreateGeosTable extends Migration
+class AddAddressIdToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,12 +16,8 @@ class CreateGeosTable extends Migration
      */
     public function up()
     {
-        Schema::create('geos', function (Blueprint $table) {
-            $table->id();
-            $table->string('lat');
-            $table->string('lng');
+        Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger('addressId');
-            $table->timestamps();
 
             $table->foreign('addressId')
                 ->references('id')
@@ -37,6 +33,9 @@ class CreateGeosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('geos');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign('users_addressid_foreign');
+            $table->dropColumn('addressId');
+        });
     }
 }

@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Company
+ * Class Post
  * @package App\Models
  */
-class Company extends Model
+class Post extends Model
 {
     use HasFactory;
 }

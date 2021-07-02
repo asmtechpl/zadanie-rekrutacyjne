@@ -5,9 +5,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Class AddCompanyIdToUsersTable
+ * Class AddPhoneWebsiteToUsersTable
  */
-class AddCompanyIdToUsersTable extends Migration
+class AddPhoneWebsiteToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,12 +17,8 @@ class AddCompanyIdToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('companyId');
-
-            $table->foreign('companyId')
-                ->references('id')
-                ->on('companies')
-                ->restrictOnDelete();
+            $table->string('phone');
+            $table->string('website');
         });
     }
 
@@ -34,8 +30,8 @@ class AddCompanyIdToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign('users_companyid_foreign');
-            $table->dropColumn('companyId');
+            $table->dropColumn('phone');
+            $table->dropColumn('website');
         });
     }
 }
