@@ -2,13 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Address;
-use App\Models\Company;
-use App\Models\Geo;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Console\Command;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Http;
 
