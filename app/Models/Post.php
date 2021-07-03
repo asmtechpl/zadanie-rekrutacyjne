@@ -15,6 +15,16 @@ class Post extends Model
     use HasFactory;
 
     /**
+     * @var string[]
+     */
+    protected $fillable = [
+        'id',
+        'title',
+        'body',
+        'userId',
+    ];
+
+    /**
      * @return BelongsTo
      */
     public function user(): BelongsTo

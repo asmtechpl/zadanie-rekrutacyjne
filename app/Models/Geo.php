@@ -15,6 +15,15 @@ class Geo extends Model
     use HasFactory;
 
     /**
+     * @var string[]
+     */
+    protected $fillable = [
+        'lat',
+        'lng',
+        'addressId',
+    ];
+
+    /**
      * @return BelongsTo
      */
     public function address(): BelongsTo

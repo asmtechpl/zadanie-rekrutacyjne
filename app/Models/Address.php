@@ -16,6 +16,16 @@ class Address extends Model
     use HasFactory;
 
     /**
+     * @var string[]
+     */
+    protected $fillable = [
+        'street',
+        'suite',
+        'city',
+        'zipcode',
+    ];
+
+    /**
      * @return HasMany
      */
     public function users(): HasMany
