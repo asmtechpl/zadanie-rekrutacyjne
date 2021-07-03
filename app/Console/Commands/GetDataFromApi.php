@@ -48,7 +48,9 @@ class GetDataFromApi extends Command
         parent::__construct();
     }
 
-
+    /**
+     * @return void
+     */
     public function handle()
     {
         if($this->createOrUpdateUser())
