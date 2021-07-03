@@ -7,6 +7,8 @@ git clone https://github.com/asmtechpl/zadanie-rekrutacyjne.git
 # Requirements
 
 - PHP 7.4.16
+- NODE >=12.13.0
+- NPM >=6.12.0
 
 # Installation
 
