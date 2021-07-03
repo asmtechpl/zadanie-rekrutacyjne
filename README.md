@@ -1,6 +1,6 @@
 # Zadanie rekrutacyjne
 
-Get project from gitgub
+Get project from github
 ```shell
 git clone https://github.com/asmtechpl/zadanie-rekrutacyjne.git
 ```
